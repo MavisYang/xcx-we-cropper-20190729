@@ -1,0 +1,23 @@
+<!--pages/upload_img/index.wxml-->
+<import src='../../we-cropper/we-cropper.wxml'></import>
+
+<view class='cropper-wrapper' wx:if="{{showStatus}}">
+  <template is="we-cropper" data="{{...cropperOpt}}" />
+  <view class="cropper-buttons">
+    <view class="uploadAgain" catchtap="uploadTap">
+      重新上传
+    </view>
+    <view class="getCropperImage" catchtap="getCropperImage">
+      截取图片
+    </view>
+  </view>
+</view>
+
+<view>
+
+  <image class="cat_photo" wx:if='{{head_url}}' src="{{head_url}}" mode="aspectFill" bindtap="uploadTap"> </image>
+  <view wx:else class="cat_photo" bindtap="uploadTap">
+    猫咪图片
+  </view>
+
+</view>
